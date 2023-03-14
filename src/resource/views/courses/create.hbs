@@ -1,0 +1,35 @@
+<div class="mt-4">
+  <form class="row g-3" method="POST" action="/course/store">
+    <div class="col-12">
+      <label for="name" class="form-label">Name :</label>
+      <input type="text" class="form-control" id="name" name="name" />
+    </div>
+    {{! <div class="col-12">
+      <label for="slug" class="form-label">Slug :</label>
+      <input type="text" class="form-control" id="slug" name="slug" />
+    </div> }}
+    <div class="col-12">
+      <label for="description" class="form-label">Description :</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        placeholder="Description..."
+        name="description"
+      />
+    </div>
+    <div class="col-12">
+      <label for="image" class="form-label">Image :</label>
+      <input
+        type="text"
+        class="form-control"
+        id="image"
+        placeholder="Apartment, studio, or floor"
+        name="image"
+      />
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </form>
+</div>
