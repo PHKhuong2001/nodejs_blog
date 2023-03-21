@@ -1,9 +1,22 @@
+{{! Forms already support POST and GET }}
+{{! npm methodOverride Delete and Put and Patch }}
 <div class="mt-4">
-  <h3>Create Course</h3>
-  <form class="mt-4 row g-3" method="POST" action="/courses/store">
+  <h3>Update Course</h3>
+
+  <form
+    class="mt-4 row g-3"
+    method="POST"
+    action="/courses/{{course._id}}?_method=PUT"
+  >
     <div class="col-12">
       <label for="name" class="form-label">Name :</label>
-      <input type="text" class="form-control" id="name" name="name" />
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        value="{{course.name}}"
+      />
     </div>
     {{! <div class="col-12">
       <label for="slug" class="form-label">Slug :</label>
@@ -11,13 +24,13 @@
     </div> }}
     <div class="col-12">
       <label for="description" class="form-label">Description :</label>
-      <input
+      <textarea
         type="text"
         class="form-control"
         id="description"
         placeholder="Description..."
         name="description"
-      />
+      >{{course.description}}</textarea>
     </div>
     <div class="col-12">
       <label for="image" class="form-label">Image :</label>
@@ -25,6 +38,7 @@
         type="text"
         class="form-control"
         id="image"
+        value="{{course.image}}"
         placeholder="Apartment, studio, or floor"
         name="image"
       />
@@ -35,12 +49,13 @@
         type="text"
         class="form-control"
         id="level"
+        value="{{course.level}}"
         placeholder="Enter Level...."
         name="level"
       />
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="submit" class="btn btn-primary">Update</button>
     </div>
   </form>
 </div>
